@@ -4,6 +4,7 @@ public class BDSimulado {
 	
 	private ArrayList<ONGs> ONGs;
 	private ArrayList<PostosDeAtendimento> postosDeAtendimento;
+
 	
 	public BDSimulado(){
 		this.ONGs = new ArrayList<ONGs>();	
@@ -22,11 +23,11 @@ public class BDSimulado {
 		
 		this.postosDeAtendimento = new ArrayList<PostosDeAtendimento>();
 		
-		PostosDeAtendimento p1 = new PostosDeAtendimento(1, 150000.0, false, false, false);
-		PostosDeAtendimento p2 = new PostosDeAtendimento(2, 57000.0, false, false, true);
-		PostosDeAtendimento p3 = new PostosDeAtendimento(3, 28000.0, false, true, true);
-		PostosDeAtendimento p4 = new PostosDeAtendimento(4, 76000.0, true, true, true);
-		PostosDeAtendimento p5 = new PostosDeAtendimento(5, 23000.0, true, true, false);
+		PostosDeAtendimento p1 = new PostosDeAtendimento(1, 150000.0, false, false, false, o1);
+		PostosDeAtendimento p2 = new PostosDeAtendimento(2, 57000.0, false, false, true, o2);
+		PostosDeAtendimento p3 = new PostosDeAtendimento(3, 28000.0, false, true, true, o3);
+		PostosDeAtendimento p4 = new PostosDeAtendimento(4, 76000.0, true, true, true, o4);
+		PostosDeAtendimento p5 = new PostosDeAtendimento(5, 23000.0, true, true, false, o5);
 		
 		this.postosDeAtendimento.add(p1);
 		this.postosDeAtendimento.add(p2);
@@ -34,13 +35,15 @@ public class BDSimulado {
 		this.postosDeAtendimento.add(p4);
 		this.postosDeAtendimento.add(p5);		
 		
+
+		
+
 			}
 	public ArrayList<ONGs> getONGs() {
 		return ONGs;
 	
 		}
 
-	
 		
 	
 	public ArrayList<ONGs> getInfoONG(String nome){
@@ -71,13 +74,13 @@ public class BDSimulado {
 
 		return resultado;
 	}
-	public ArrayList<PostosDeAtendimento> getPostosPorCapacidade(int capacidade){
+	public ArrayList<PostosDeAtendimento> getPostosPorCapacidade(double capacidade){
 		
 		ArrayList<PostosDeAtendimento> resultado = new ArrayList<PostosDeAtendimento>();
 		
-for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
+		for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
 			
-			if (this.postosDeAtendimento.get(i).getCapacidade() == capacidade) {
+			if (this.postosDeAtendimento.get(i).getCapacidade() > capacidade) {
 				resultado.add(this.postosDeAtendimento.get(i));
 			}
 		}
@@ -88,5 +91,22 @@ for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
 		return postosDeAtendimento;
 	}
 
+	public ArrayList<PostosDeAtendimento> getPostosVegetarianos(boolean vegetariano){
+		
+		ArrayList<PostosDeAtendimento> resultado = new ArrayList<PostosDeAtendimento>();
+		
+		
+		for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
+			
+			if (this.postosDeAtendimento.get(i).isVegetariano() == vegetariano) {
+				resultado.add(this.postosDeAtendimento.get(i));
+			}
+		}
+
+		return resultado;
+	}
 	
-}
+	
+		}
+
+

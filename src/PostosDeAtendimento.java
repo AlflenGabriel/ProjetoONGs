@@ -6,16 +6,18 @@ public class PostosDeAtendimento {
 	public boolean vegetariano;
 	public boolean semGluten;
 	public boolean semLactose;
-	
+	public ONGs ong;
+			
 	
 	public PostosDeAtendimento(int codigo, double capacidade, boolean vegetariano, boolean semGluten,
-			boolean semLactose) {
+			boolean semLactose, ONGs ong) {
 		super();
 		this.codigo = codigo;
 		this.capacidade = capacidade;
 		this.vegetariano = vegetariano;
 		this.semGluten = semGluten;
 		this.semLactose = semLactose;
+		this.ong = ong;
 	}
 
 	public int getCodigo() {
@@ -56,6 +58,14 @@ public class PostosDeAtendimento {
 
 	public void setSemLactose(boolean semLactose) {
 		this.semLactose = semLactose;
+	}
+
+	public ONGs getOng() {
+		return ong;
+	}
+
+	public void setOng(ONGs ong) {
+		this.ong = ong;
 	}
 		
 }

@@ -6,33 +6,46 @@ public class Principal {
 		
 BDSimulado bds = new BDSimulado();
 		
-		ArrayList<PostosDeAtendimento> postosDeAtendimento = bds.getPostosDeAtendimento();
-		
-        for (int i = 0; i > postosDeAtendimento.size(); i++){ 
-        	if (postosDeAtendimento.get(i).getCapacidade() == 57000.0) {
-        		System.out.println("Postos com capacidade superior: " + postosDeAtendimento.get(i).getCodigo());	
-			}          
-        }
+		ArrayList<PostosDeAtendimento> postosDeAtendimento = bds.getPostosDeAtendimento();		
 		
 		ArrayList<ONGs> ONGs = bds.getONGs();
-		
+				
         ArrayList<ONGs> ONGPorNome = bds.getInfoONG("SPDM");
         
         for (int i = 0; i < ONGPorNome.size(); i++){
-        	System.out.println(ONGPorNome.get(i).getNome() + ": " + "\n" + "Responsável - " + ONGPorNome.get(i).getResponsavel() + "\n" + "Estado - " + ONGPorNome.get(i).getEstado());
+        	System.out.println(" ¥¥ " + ONGPorNome.get(i).getNome() + " ¥¥ " + "\n" + "Responsável - " + ONGPorNome.get(i).getResponsavel() + "\nEstado - " + ONGPorNome.get(i).getEstado());
               
         	}
 
         ArrayList<ONGs> getNumONGPorEstado = bds.getNumONGPorEstado("SP");
         
+        System.out.println("\n ¥¥ ONGs presentes no Estado ¥¥ ");
+        
         for (int i = 0; i < getNumONGPorEstado.size(); i++){       	
         	System.out.println(getNumONGPorEstado.get(i).getNome());
               
         	}
-     //   ArrayList<PostosDeAtendimento> getPostosPorCapacidade = bds.getPostosPorCapacidade(30000);
+
+        	
+        ArrayList<PostosDeAtendimento> getPostosPorCapacidade = bds.getPostosPorCapacidade(57000.0);
+	
+        System.out.println("\n ¥¥ Postos de Atendimento com capacidade superior ¥¥ ");
         
+        for (int i = 0; i < getPostosPorCapacidade.size(); i++){       	
+        	System.out.println(getPostosPorCapacidade.get(i).getCodigo());
+       
+        }
+
+        ArrayList<PostosDeAtendimento> getPostosVegetarianos = bds.getPostosVegetarianos(false);
+    	
+        System.out.println("\n ¥¥ Postos de Atendimento vegetarianos ¥¥ ");
+        
+        for (int i = 0; i < getPostosVegetarianos.size(); i++){       	        	
+        	System.out.println(getPostosVegetarianos.get(i).getCodigo());
+       
+        }
+	
 
 	}
-
 		
 }
