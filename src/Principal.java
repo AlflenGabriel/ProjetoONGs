@@ -37,7 +37,7 @@ BDSimulado bds = new BDSimulado();
        
         }
 
-        ArrayList<PostosDeAtendimento> getPostosVegetarianos = bds.getPostosVegetarianos(false);
+        ArrayList<PostosDeAtendimento> getPostosVegetarianos = bds.getPostosVegetarianos(true);
     	
         System.out.println("\n ее Postos de Atendimento vegetarianos ее ");
         
