@@ -1,9 +1,9 @@
 
 public class ONGs {
 	
-	public String nome;
-	public String responsavel;
-	public String estado;
+	private String nome;
+	private String responsavel;
+	private String estado;
 	
 	
 	

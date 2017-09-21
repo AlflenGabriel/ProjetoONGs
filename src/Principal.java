@@ -6,14 +6,15 @@ public class Principal {
 		
 BDSimulado bds = new BDSimulado();
 		
-		ArrayList<PostosDeAtendimento> postosDeAtendimento = bds.getPostosDeAtendimento();		
+	//	ArrayList<PostosDeAtendimento> postosDeAtendimento = bds.getPostosDeAtendimento();		
 		
-		ArrayList<ONGs> ONGs = bds.getONGs();
+    //	ArrayList<ONGs> ONGs = bds.getONGs();
 				
         ArrayList<ONGs> ONGPorNome = bds.getInfoONG("SPDM");
         
         for (int i = 0; i < ONGPorNome.size(); i++){
-        	System.out.println(" ¥¥ " + ONGPorNome.get(i).getNome() + " ¥¥ " + "\n" + "Responsável - " + ONGPorNome.get(i).getResponsavel() + "\nEstado - " + ONGPorNome.get(i).getEstado());
+        	System.out.println(" ¥¥ " + ONGPorNome.get(i).getNome() + " ¥¥ " + "\n" +
+        "Responsável - " + ONGPorNome.get(i).getResponsavel() + "\nEstado - " + ONGPorNome.get(i).getEstado());
               
         	}
 

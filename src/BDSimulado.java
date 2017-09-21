@@ -23,11 +23,11 @@ public class BDSimulado {
 		
 		this.postosDeAtendimento = new ArrayList<PostosDeAtendimento>();
 		
-		PostosDeAtendimento p1 = new PostosDeAtendimento(1, 150000.0, false, false, false, o1);
-		PostosDeAtendimento p2 = new PostosDeAtendimento(2, 57000.0, false, false, true, o2);
-		PostosDeAtendimento p3 = new PostosDeAtendimento(3, 28000.0, false, true, true, o3);
-		PostosDeAtendimento p4 = new PostosDeAtendimento(4, 76000.0, true, true, true, o4);
-		PostosDeAtendimento p5 = new PostosDeAtendimento(5, 23000.0, true, true, false, o5);
+		PostosDeAtendimento p1 = new PostosDeAtendimento(165, 150000.0, false, false, false, o1);
+		PostosDeAtendimento p2 = new PostosDeAtendimento(254, 57000.0, false, false, true, o2);
+		PostosDeAtendimento p3 = new PostosDeAtendimento(387, 28000.0, false, true, true, o3);
+		PostosDeAtendimento p4 = new PostosDeAtendimento(422, 76000.0, true, true, true, o4);
+		PostosDeAtendimento p5 = new PostosDeAtendimento(576, 23000.0, true, true, false, o5);
 		
 		this.postosDeAtendimento.add(p1);
 		this.postosDeAtendimento.add(p2);

@@ -1,17 +1,16 @@
 
 public class PostosDeAtendimento {
 	
-	public int codigo;
-	public double capacidade;
-	public boolean vegetariano;
-	public boolean semGluten;
-	public boolean semLactose;
-	public ONGs ong;
+	private int codigo;
+	private double capacidade;
+	private boolean vegetariano;
+	private boolean semGluten;
+	private boolean semLactose;
+	private ONGs ong;
 			
 	
 	public PostosDeAtendimento(int codigo, double capacidade, boolean vegetariano, boolean semGluten,
 			boolean semLactose, ONGs ong) {
-		super();
 		this.codigo = codigo;
 		this.capacidade = capacidade;
 		this.vegetariano = vegetariano;
