@@ -4,11 +4,11 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-BDSimulado bds = new BDSimulado();
+		BDSimulado bds = new BDSimulado();
 		
-	//	ArrayList<PostosDeAtendimento> postosDeAtendimento = bds.getPostosDeAtendimento();		
+		//	ArrayList<PostosDeAtendimento> postosDeAtendimento = bds.getPostosDeAtendimento();		
 		
-    //	ArrayList<ONGs> ONGs = bds.getONGs();
+		//	ArrayList<ONGs> ONGs = bds.getONGs();
 				
         ArrayList<ONGs> ONGPorNome = bds.getInfoONG("SPDM");
         
