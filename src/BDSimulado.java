@@ -46,67 +46,80 @@ public class BDSimulado {
 
 		
 	
-	public ArrayList<ONGs> getInfoONG(String nome){
+	public String getInfoONG(String nomeONG){
+		String resultado = "";
 		
-		ArrayList<ONGs> resultado = new ArrayList<ONGs>();
-		
-		
+		//Percorrer a lista de ONGs buscando pelo nome
 		for (int i = 0; i < this.ONGs.size(); i++) {
-			
-			if (this.ONGs.get(i).getNome().equals(nome)) {
-				resultado.add(this.ONGs.get(i));
+			if (this.ONGs.get(i).getNome().equals(nomeONG)) {
+				resultado = "Nome: " + this.ONGs.get(i).getNome()
+						+ "\n" +
+						"Responsável: " + this.ONGs.get(i).getResponsavel()
+						+ "\n" +
+					    "Estado: " + this.ONGs.get(i).getEstado();
 			}
 		}
-
+		
 		return resultado;
 	}
-	public ArrayList<ONGs> getNumONGPorEstado(String estado){
+	
+	//Metodo que retorna o num de ongs por estado
+	public int getNumONGPorEstado(String estado){
+		int resultado = 0;
 		
-		ArrayList<ONGs> resultado = new ArrayList<ONGs>();
-		
-		
+		//Percorrer a lista de ONGs
 		for (int i = 0; i < this.ONGs.size(); i++) {
-			
 			if (this.ONGs.get(i).getEstado().equals(estado)) {
-				resultado.add(this.ONGs.get(i));
+				resultado++;
 			}
 		}
-
-		return resultado;
-	}
-	public ArrayList<PostosDeAtendimento> getPostosPorCapacidade(double capacidade){
 		
-		ArrayList<PostosDeAtendimento> resultado = new ArrayList<PostosDeAtendimento>();
-		
-		for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
-			
-			if (this.postosDeAtendimento.get(i).getCapacidade() > capacidade) {
-				resultado.add(this.postosDeAtendimento.get(i));
-			}
-		}
-		return resultado;
-	}
-	public ArrayList<PostosDeAtendimento> getPostosDeAtendimento() {
-		
-		return postosDeAtendimento;
-	}
-
-	public ArrayList<PostosDeAtendimento> getPostosVegetarianos(boolean vegetariano){
-		
-		ArrayList<PostosDeAtendimento> resultado = new ArrayList<PostosDeAtendimento>();
-		
-		
-		for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
-			
-			if (this.postosDeAtendimento.get(i).isVegetariano() == vegetariano) {
-				resultado.add(this.postosDeAtendimento.get(i));
-			}
-		}
-
 		return resultado;
 	}
 	
-	
+	//Metodo que retorna lista de postos por capacidade
+	public ArrayList<PostosDeAtendimento> getPostosPorCapacidade(int x){
+		ArrayList<PostosDeAtendimento> resultado = new ArrayList<PostosDeAtendimento>();
+		
+		//Percorrer a lista de Postos
+		for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
+			if (this.postosDeAtendimento.get(i).getCapacidade() > x) {
+				resultado.add(this.postosDeAtendimento.get(i));
+			}
 		}
-
-
+		
+		return resultado;
+	}
+	
+	//Metodo que retorna o codigo dos postos vegetarianos
+	public ArrayList<Integer> getPostosVegetarianos(){
+		ArrayList<Integer> resultado = new ArrayList<Integer>();
+		
+		//Percorrer a lista de Postos
+		for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
+			if (this.postosDeAtendimento.get(i).isVegetariano()) {
+				resultado.add(this.postosDeAtendimento.get(i).getCodigo());
+			}
+		}
+		
+		return resultado;
+	}
+	
+	//Metodo que retorna o nome da ONG que vai atender a caravana por numero de pessoas
+	public String getONGQueAtende(int qtdePessoas){
+		String resultado = "";
+		
+		double qtdeComida = qtdePessoas * 0.5;
+		
+		//Percorrer a lista de postos
+		for (int i = 0; i < this.postosDeAtendimento.size(); i++) {
+			if (this.postosDeAtendimento.get(i).getCapacidade() >= qtdeComida) {
+				resultado = this.postosDeAtendimento.get(i).getOng().getNome();
+			}
+		}
+		
+		return resultado;
+	}
+}
+	
+	
